@@ -37,8 +37,10 @@ export default class Search extends Component {
   render() {
 
     let strainCards = this.state.list.map((strain, i) => {
-      return <StrainCard key={i} id={strain.id} name={strain.name} race={strain.race} flavors={strain.flavors} effects={strain.effects}/>
+      return <StrainCard key={i} id={strain.id} name={strain.name} species={strain.race} flavors={strain.flavors} effects={strain.effects}/>
     })
+
+    let shortList = strainCards.slice(0,10);
 
     return (
       <div className='searchPage'>
@@ -51,7 +53,7 @@ export default class Search extends Component {
           <button onClick={this.search}>Search</button>
         </div>
         <div className='strains'>
-          {strainCards}
+          {shortList}
         </div>
       </div>
     )
