@@ -10,8 +10,8 @@
 .modal {
   position: absolute;
   top: 15vh;
-  left: 35vw;
-  right: 35vw;
+  left: 30vw;
+  right: 30vw;
   bottom: 15vh;
   background-color: papayawhip;
   border: 5px solid darkgreen;
@@ -36,6 +36,7 @@
 .name {
   font-size: 35px;
   margin: 1rem;
+  margin-bottom: .3rem;
 }
 
 .species {
@@ -43,19 +44,15 @@
 }
 
 .description {
-  margin: 20px 70px;
+  margin: 20px 60px;
 }
 
 .allLists {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .lists {
   display: flex;
-  justify-content: space-evenly;
-}
-
-.list {
-  margin: 10px 25px;
+  flex-direction: column;
 }
