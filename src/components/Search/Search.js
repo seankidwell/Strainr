@@ -37,7 +37,15 @@ export default class Search extends Component {
   render() {
 
     let strainCards = this.state.list.map((strain, i) => {
-      return <StrainCard key={i} id={strain.id} name={strain.name} species={strain.race} flavors={strain.flavors} effects={strain.effects}/>
+      let backgroundColor = '';
+      if (strain.race==='indica') {
+        backgroundColor = '#0000ff'
+      } else if (strain.race==='sativa') {
+        backgroundColor = '#ff9900'
+      } else {
+        backgroundColor = '#804c80'
+      }
+      return <StrainCard key={i} id={strain.id} name={strain.name} species={strain.race} flavors={strain.flavors} effects={strain.effects} bgColor={backgroundColor}/>
     })
 
     let shortList = strainCards.slice(0,10);
@@ -54,6 +62,7 @@ export default class Search extends Component {
         </div>
         <div className='strains'>
           {shortList}
+          {/* {strainCards} */}
         </div>
       </div>
     )

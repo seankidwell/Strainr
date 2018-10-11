@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import './StrainCard.css';
 import Modal from 'react-responsive-modal';
 import axios from 'axios';
+import potLeaf from '../../assets/pot-leaf-icon.png';
 
 export default class StrainCard extends Component {
   constructor() {
     super();
     this.state = {
       showModal: false,
-      desc: ''
+      desc: '',
+      backgroundColor: ''
     }
     this.key = '5qO8Dl0';
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -31,6 +33,7 @@ export default class StrainCard extends Component {
   }
 
   render() {
+    console.log('new render')
 
     let medicinal = this.props.effects.medical.map((effect, i) => <li key={i}>{effect}</li>)
     let positive = this.props.effects.positive.map((effect, i) => <li key={i}>{effect}</li>)
@@ -40,16 +43,14 @@ export default class StrainCard extends Component {
 
     return (
       <div>
-        <div className='strainCard' onClick={this.handleOpenModal}>
-            {this.props.name}
+        <div className='strainCard' onClick={this.handleOpenModal} style={{backgroundColor: this.props.bgColor}}>
+            <span>{this.props.name}</span>
+            <img className='weedImg' alt='leaf' src={potLeaf}/>
         </div>
         <Modal
           open={this.state.showModal}
           onClose={this.handleCloseModal}
-          classNames={{overlay: 'overlay', modal: 'modal'}}
-        //  className="modal"
-        //  overlayClassName="overlay"
-        //  shouldCloseOnOverlayClick={true}
+          classNames={{overlay: 'overlay', modal: 'modal', closeIcon: 'closeIcon', closeButton: 'closeButton'}}
         >
           <div className='title'>
             <div className='name'>{this.props.name}</div>
