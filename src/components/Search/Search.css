@@ -1,3 +1,8 @@
+#searchPage {
+  padding: 0px 15vw;
+  padding-top: 5vh;
+}
+
 .strains {
   display: flex;
   flex-wrap: wrap;

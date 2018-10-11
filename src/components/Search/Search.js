@@ -30,7 +30,6 @@ export default class Search extends Component {
         }
       }
       this.setState({list: loopList})
-      console.log(this.state.list)
     })
   }
 
@@ -51,8 +50,8 @@ export default class Search extends Component {
     let shortList = strainCards.slice(0,10);
 
     return (
-      <div className='searchPage'>
-        <div className='searchArea'>
+      <div id='searchPage'>
+        <div id='searchArea'>
           <select name='species' onChange={this.handleChange}>
             <option value='indica'>Indica</option>
             <option value='sativa'>Sativa</option>

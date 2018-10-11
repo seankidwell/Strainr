@@ -29,17 +29,16 @@ export default class StrainCard extends Component {
   
   handleCloseModal() {
     this.setState({ showModal: false });
-    console.log('close hit')
   }
 
   render() {
-    console.log('new render')
 
     let medicinal = this.props.effects.medical.map((effect, i) => <li key={i}>{effect}</li>)
     let positive = this.props.effects.positive.map((effect, i) => <li key={i}>{effect}</li>)
     let negative = this.props.effects.negative.map((effect, i) => <li key={i}>{effect}</li>)
     let flavors = this.props.flavors.map((flav, i) => <li key={i}>{flav}</li>)
     let species = this.props.species.charAt(0).toUpperCase(0) + this.props.species.slice(1);
+    let noDesc = 'No description available'
 
     return (
       <div>
@@ -56,7 +55,7 @@ export default class StrainCard extends Component {
             <div className='name'>{this.props.name}</div>
             <div className='species'>{species}</div>
           </div>
-          <p className='description'>{this.state.desc}</p>
+          <p className='description'>{this.state.desc===null?noDesc:this.state.desc}</p>
           <div className='allLists'>
             <div className='lists'>
               <div className='list'>
