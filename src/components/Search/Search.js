@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 import StrainCard from '../StrainCard/StrainCard';
+import Pagination from "react-js-pagination";
 import axios from 'axios';
 import './Search.css';
+require("bootstrap/less/bootstrap.less");
 
 export default class Search extends Component {
   constructor() {
     super();
     this.state = {
       species: 'indica',
-      list: []
+      list: [],
+      activePage: 1
     }
     this.key = '5qO8Dl0';
     this.handleChange = this.handleChange.bind(this);
     this.search = this.search.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
   }
 
   handleChange(event) {
@@ -31,6 +35,11 @@ export default class Search extends Component {
       }
       this.setState({list: loopList})
     })
+  }
+
+  handlePageChange(pageNumber) {
+    console.log(`active page is ${pageNumber}`);
+    this.setState({activePage: pageNumber});
   }
 
   render() {
@@ -63,6 +72,12 @@ export default class Search extends Component {
           {shortList}
           {/* {strainCards} */}
         </div>
+        <Pagination
+          activePage={this.state.activePage}
+          itemsCountPerPage={10}
+          totalItemsCount={50}
+          onChange={this.handlePageChange}
+        />
       </div>
     )
   }
