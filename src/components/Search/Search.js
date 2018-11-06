@@ -3,7 +3,6 @@ import StrainCard from '../StrainCard/StrainCard';
 import Pagination from "react-js-pagination";
 import axios from 'axios';
 import './Search.css';
-require("bootstrap/less/bootstrap.less");
 
 export default class Search extends Component {
   constructor() {
