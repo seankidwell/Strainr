@@ -73,9 +73,10 @@ export default class Search extends Component {
         </div>
         <Pagination
           activePage={this.state.activePage}
-          itemsCountPerPage={10}
-          totalItemsCount={50}
+          itemsCountPerPage={30}
+          totalItemsCount={this.state.list.length}
           onChange={this.handlePageChange}
+          itemClass='itemClass'
         />
       </div>
     )
