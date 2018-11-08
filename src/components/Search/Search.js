@@ -32,7 +32,7 @@ export default class Search extends Component {
           loopList.push(newObj)
         }
       }
-      this.setState({list: loopList})
+      this.setState({list: loopList, activePage: 1})
     })
   }
 
@@ -57,6 +57,11 @@ export default class Search extends Component {
 
     let shortList = strainCards.slice(0,10);
 
+    let arrayOfPages = [];
+    while (strainCards.length > 0) {
+      arrayOfPages.push(strainCards.splice(0,30))
+    }
+
     return (
       <div id='searchPage'>
         <div id='searchArea'>
@@ -68,16 +73,17 @@ export default class Search extends Component {
           <button onClick={this.search}>Search</button>
         </div>
         <div className='strains'>
-          {shortList}
-          {/* {strainCards} */}
+          {arrayOfPages[this.state.activePage-1]}
         </div>
+        {this.state.list.length!==0?
         <Pagination
           activePage={this.state.activePage}
-          itemsCountPerPage={30}
+          itemsCountPerPage={36}
           totalItemsCount={this.state.list.length}
           onChange={this.handlePageChange}
           itemClass='itemClass'
-        />
+        />:
+        null}
       </div>
     )
   }
