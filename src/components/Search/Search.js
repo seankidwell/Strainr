@@ -55,8 +55,6 @@ export default class Search extends Component {
       return <StrainCard key={i} id={strain.id} name={strain.name} species={strain.race} flavors={strain.flavors} effects={strain.effects} bgColor={backgroundColor}/>
     })
 
-    let shortList = strainCards.slice(0,10);
-
     let arrayOfPages = [];
     while (strainCards.length > 0) {
       arrayOfPages.push(strainCards.splice(0,30))
