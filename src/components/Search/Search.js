@@ -46,7 +46,7 @@ export default class Search extends Component {
     let strainCards = this.state.list.map((strain, i) => {
       let backgroundColor = '';
       if (strain.race==='indica') {
-        backgroundColor = '#0000ff'
+        backgroundColor = '#2142FF'
       } else if (strain.race==='sativa') {
         backgroundColor = '#ff9900'
       } else {
