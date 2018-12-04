@@ -25,3 +25,8 @@
   font-size: 88px;
   font-family: 'Courier New', Courier, monospace
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
