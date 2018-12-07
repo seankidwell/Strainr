@@ -2,5 +2,5 @@
   min-height: 100vh;
   background-repeat: no-repeat,repeat;
   background-size: cover;
-  background-image: linear-gradient( rgba(37, 255, 55, 0.452), rgba(0, 0, 0, 0.685)), url('./assets/CannabisGreenhouse.jpg');
+  background-image: linear-gradient( rgba(37, 255, 55, 0.452), rgba(0, 0, 0, 0.885)), url('./assets/CannabisGreenhouse.jpg');
 }
