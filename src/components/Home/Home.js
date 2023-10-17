@@ -5,7 +5,7 @@ export default function Home () {
   return (
     <div id='homePage'>
      <div>
-       something
+       testing testing 123
      </div>
     </div>
   )
