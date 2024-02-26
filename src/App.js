@@ -4,7 +4,7 @@ import Nav from './components/Nav/Nav';
 import './App.css';
 
 class App extends Component {
-  //test123 do re mi fa so la ti do abcdefghijklmnopqrstuv
+  //test123 do re mi fa so la ti do abcdefghijklmnopqrstuvw
   render() {
     return (
       <div className="App">
